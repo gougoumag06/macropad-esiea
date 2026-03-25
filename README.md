@@ -13,10 +13,10 @@ LeHack Kids est un évènement qui se tient en même temps que le salon du Hack 
 
 Tout les fichiers nécessaires au projets sont fournis (notice de montage et plans 3D). 
 Sa réalisation requiert du materiel : 
--carte RP2040zero
--imprimantes 3D
--poste à souder
--swich
--câbles.
+- carte RP2040zero
+- imprimantes 3D
+- poste à souder
+- swich
+- câbles.
 
 **Remarques et améliorations possibles** (utilisation pcb, développer site web)
