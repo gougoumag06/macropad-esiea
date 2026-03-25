@@ -1,8 +1,8 @@
-# Glyph
+# Il faut un nom cool
 
 **Qu'est ce que c'est ?**
 
-Glyph est un mini clavier de 6 touches crée par notre équipe  
+[nom cool] est un mini clavier de 6 touches crée par notre équipe  
 
 ![kesiea](/assets/images/kesiea.jpg)
 
