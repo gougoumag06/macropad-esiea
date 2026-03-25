@@ -1,8 +1,8 @@
-# 
+# Glyph
 
 **Qu'est ce que c'est ?**
 
-[nom] est un mini clavier de 6 touches crée par notre équipe (image)  
+Glyph est un mini clavier de 6 touches crée par notre équipe  
 
 ![kesiea](/assets/images/kesiea.jpg)
 
