@@ -4,7 +4,7 @@
 
 [nom] est un mini clavier de 6 touches crée par notre équipe (image)  
 
-![Tux, the Linux mascot](/assets/images/kesiea.png)
+![kesiea](/assets/images/kesiea.jpg)
 
 **Pourquoi ?**
 
