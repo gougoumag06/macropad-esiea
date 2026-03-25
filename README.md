@@ -11,7 +11,7 @@ LeHack Kids est un évènement qui se tient en même temps que le salon du Hack 
 
 **Comment ?**
 
-Tout les fichiers nécessaires au projets sont fournis (notice de montage et plans 3D). 
+Tout les fichiers nécessaires au projets sont fournis (notice de montage et plans 3D).  
 Sa réalisation requiert du materiel : 
 - carte RP2040zero
 - imprimantes 3D
