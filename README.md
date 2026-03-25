@@ -2,7 +2,9 @@
 
 **Qu'est ce que c'est ?**
 
-[nom] est un mini clavier de 6 touches crée par notre équipe (image)
+[nom] est un mini clavier de 6 touches crée par notre équipe (image)  
+
+![kesiea]([http://url/to/img.png](https://media.discordapp.net/attachments/1292764913487314964/1486382311846187198/20260325_154921.jpg?ex=69c54ce6&is=69c3fb66&hm=3b01c641750355cc25173cf084ffe7347de0e29d821e730dcefd1473e216b0e3&=&format=webp&width=572&height=429))
 
 **Pourquoi ?**
 
