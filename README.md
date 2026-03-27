@@ -2,7 +2,7 @@
 
 **Qu'est ce que c'est ?**
 
-[nom cool] est un mini clavier de 6 touches crée par notre équipe  
+Le macropad est un mini clavier de 6 touches crée par notre équipe  
 
 ![kesiea](/assets/images/kesiea.jpg)
 
