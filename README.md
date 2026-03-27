@@ -1,4 +1,4 @@
-# Il faut un nom cool
+# Macropad
 
 **Qu'est ce que c'est ?**
 
