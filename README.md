@@ -18,7 +18,7 @@ Sa réalisation requiert du materiel :
 - carte RP2040zero
 - imprimantes 3D
 - poste à souder
-- swich
+- switchs
 - câbles.
 
 **Remarques et améliorations possibles** (utilisation pcb, développer site web)
