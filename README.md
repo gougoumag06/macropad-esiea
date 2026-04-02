@@ -10,7 +10,7 @@ Il permet de vous faire gagner du temps au quotidien en assignant des actions sp
 **Pourquoi ?**
 
 Cette création s'inscrit dans un projet à impact RSE : [leHack Kids](https://lehack.org/fr/lehack-kids/), mené par notre équipe tout au long de notre deuxième année d'école d'ingénieur (ESIEA). 
-LeHack Kids est un évènement qui se tient en même temps que le salon leHack à Paris et permet à des jeunes de découvrir l'univers des sciences, de la technologie et de l'informatique à travers plusieurs activités. 
+LeHack Kids est un évènement qui se tient en même temps que le salon [leHack](https://lehack.org/fr/) à Paris et permet à des jeunes de découvrir l'univers des sciences, de la technologie et de l'informatique à travers plusieurs activités. 
 
 Ce mini clavier est le fruit de notre travail pour le salon de 2026 qui regroupera plusieurs domaines. Adapté à toutes les tranches d'âge, l'objectif est de faire construire le mini clavier aux jeunes de A à Z, que ce soit l'assemblage, l'électronique, la programmation et son utilisation dans une activité type mini-jeu.
 
