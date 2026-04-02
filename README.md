@@ -1,8 +1,8 @@
-# Macropad
+# Glyphie
 
 **Qu'est ce que c'est ?**
 
-Le macropad est un mini clavier de 6 touches créé par notre équipe.  
+Glyphie est un mini clavier de 6 touches créé par notre équipe.  
 Il permet de vous faire gagner du temps au quotidien en assignant des actions spécifiques à chacune de ses touches (des raccourcis, des phrases automatiques ou l'ouverture de logiciels).
 
 ![kesiea](/assets/images/kesiea.jpg)
