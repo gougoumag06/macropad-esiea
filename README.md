@@ -2,23 +2,83 @@
 
 **Qu'est ce que c'est ?**
 
-Le macropad est un mini clavier de 6 touches crée par notre équipe  
+Le macropad est un mini clavier de 6 touches créé par notre équipe.  
+Il permet de vous faire gagner du temps au quotidien en assignant des actions spécifiques à chacune de ses touches (des raccourcis, des phrases automatiques ou l'ouverture de logiciels).
 
 ![kesiea](/assets/images/kesiea.jpg)
 
 **Pourquoi ?**
 
-Cette création s'inscrit dans un projet à impact RSE : [leHack Kids](https://lehack.org/fr/lehack-kids/), mené par notre équipe tout au long de notre deuxième année. 
-LeHack Kids est un évènement qui se tient en même temps que le salon du Hack à Paris et permet à des jeunes de découvrir l'univers des sciences, de la technologie et de l'informatique à travers plusieurs activités. Ce mini clavier est le fruit de notre travail pour le salon de 2026 regroupant plusieurs dommaines. Adapté à toutes les tranches d'age, l'objectif est de leur faire construire le mini clavier de A à Z, que ce soit l'assemblage, l'electronique, la programmation et son utilisation dans une activité mini jeu.
+Cette création s'inscrit dans un projet à impact RSE : [leHack Kids](https://lehack.org/fr/lehack-kids/), mené par notre équipe tout au long de notre deuxième année d'école d'ingénieur (ESIEA). 
+LeHack Kids est un évènement qui se tient en même temps que le salon leHack à Paris et permet à des jeunes de découvrir l'univers des sciences, de la technologie et de l'informatique à travers plusieurs activités. 
 
-**Comment ?**
+Ce mini clavier est le fruit de notre travail pour le salon de 2026 qui regroupera plusieurs domaines. Adapté à toutes les tranches d'âge, l'objectif est de faire construire le mini clavier aux jeunes de A à Z, que ce soit l'assemblage, l'électronique, la programmation et son utilisation dans une activité type mini-jeu.
 
-Tout les fichiers nécessaires au projets sont fournis (notice de montage et plans 3D).  
-Sa réalisation requiert du materiel : 
-- carte RP2040zero
-- imprimantes 3D
-- poste à souder
-- switchs
-- câbles.
+---
 
-**Remarques et améliorations possibles** (utilisation pcb, développer site web)
+## 1. Montage et Installation
+
+Si vous souhaitez fabriquer ce clavier vous-même, tous les fichiers nécessaires au projet sont fournis dans ce dépôt (la notice de montage étape par étape et les plans 3D pour l'impression du boîtier).
+
+**Matériel requis :**
+- 1 carte microcontrôleur **RP2040-Zero**
+- 6 switchs (boutons) de clavier mécanique
+- Des câbles ou fils électriques fins
+- Un poste à souder et de l'étain
+- Une imprimante 3D (pour le boîtier extérieur et les capuchons des touches)
+
+**Installation du code :**
+Une fois le montage physique terminé, il faut installer le système sur la carte. Voici la marche à suivre :
+
+1. **Installer le firmware (fichier UF2) :** Branchez la carte RP2040-Zero à votre ordinateur. Elle va apparaître comme une clé USB classique. Glissez à l'intérieur le fichier `.uf2` (CircuitPython) pour installer le système de base. La carte va redémarrer automatiquement et réapparaître sous le nom `CIRCUITPY`.
+2. **Ajouter les bibliothèques :** Prenez le dossier `lib` fourni dans le projet et glissez-le directement à la racine de la carte `CIRCUITPY`.
+3. **Ajouter le programme principal :** Récupérez tout le contenu du dossier `software` présent sur ce répertoire Git (les fichiers `.py`, `config.json`, etc.) et copiez-le également à la racine de la carte RP2040.
+
+C'est prêt ! 
+
+---
+
+## 2. Utilisation et Configuration
+
+Le clavier fonctionne tout de suite, sans avoir besoin d'installer de logiciel sur votre PC. Branchez-le et c'est parti (compatible Windows, Linux).
+*Note : Par sécurité, quand vous branchez le clavier, les touches sont désactivées pendant les 3 premières secondes pour éviter de déclencher une action par erreur.*
+
+### Que peuvent faire les touches ?
+Chaque touche peut être programmée pour exécuter 3 types d'actions :
+* **Un raccourci clavier (`shortcut`) :** Pratique pour faire un `CTRL + C`, ou verrouiller le PC (`Windows + L`).
+* **Taper du texte (`text`) :** Le clavier écrit une phrase entière à votre place.
+* **Lancer un programme (`launch`) :** Ouvre une application ou un site web (`https://youtube.com`).
+
+### Comment paramétrer les touches ?
+
+Il y a deux méthodes pour personnaliser votre clavier, selon votre système d'exploitation et vos préférences.
+
+#### Méthode A : Avec l'application Web (Recommandé - Optimisé Windows)
+Nous avons créé une interface visuelle pour configurer le clavier très facilement. *(Une fois configuré sous Windows, le clavier fonctionnera parfaitement sur Linux).*
+
+1. Ouvrez le fichier `index.html` avec un navigateur basé sur Chromium (**Google Chrome, Edge, Brave ou Opera**). *Safari et Firefox ne sont pas compatibles.*
+2. Branchez le clavier.
+3. Cliquez sur le bouton **Connecter & Éditer** et choisissez votre périphérique série.
+4. Appuyez physiquement sur la touche du macropad que vous voulez modifier : la page web va la cibler automatiquement.
+5. Choisissez l'action souhaitée et cliquez sur **Appliquer au clavier**. 
+
+#### Méthode B : Directement via le fichier JSON (Pour Linux ou les bidouilleurs)
+Sur Linux, vous pouvez configurer vos touches en modifiant directement le fichier interne du clavier. Par défaut, le clavier est verrouillé pour protéger vos fichiers.
+
+Pour passer en "Mode Éditeur" :
+1. Débranchez le câble USB.
+2. Restez appuyé sur la **Touche 1** (la touche en haut à gauche quand le cable est brancher vers le haut, correspondant à l'index 0).
+3. **Tout en gardant cette touche appuyée**, branchez le câble USB sur l'ordinateur, puis relâchez-la (cette manipe permet d avoir les droit d ecriture sur la carte RP2040zero).
+4. Le clavier s'affiche sur votre PC comme une clé USB classique.
+5. Ouvrez le fichier `config.json` avec votre éditeur de texte.
+6. Modifiez vos macros dans la partie `"keys"` (des textes d'aide sont inclus dans le fichier pour vous guider).
+7. Sauvegardez le fichier (`CTRL + S`).
+8. Débranchez et rebranchez le clavier normalement pour repasser en mode "Utilisation".
+
+---
+
+## Remarques et améliorations possibles
+
+Ce projet va continuer d'évoluer. Voici nos pistes d'amélioration :
+* **Utilisation d'un PCB :** Créer notre propre circuit imprimé pour simplifier le montage et éviter de souder les câbles un par un.
+* **Développer un site web en ligne :** Héberger le fichier `index.html` sur internet pour que les utilisateurs n'aient plus besoin de le télécharger localement pour configurer leur clavier.
