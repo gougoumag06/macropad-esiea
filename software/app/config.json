@@ -1,0 +1,39 @@
+{
+  "_AIDE_1": "Parametres globaux -> layout : AZERTY ou QWERTY | os : windows ou linux",
+  "layout": "AZERTY",
+  "os": "windows",
+  "keys": {
+    "3": {
+      "type": "text",
+      "value": "1"
+    },
+    "4": {
+      "type": "text",
+      "value": "2"
+    },
+    "5": {
+      "type": "text",
+      "value": "3"
+    },
+    "6": {
+      "value": "4",
+      "type": "text"
+    },
+    "7": {
+      "value": "5",
+      "type": "text"
+    },
+    "8": {
+      "type": "text",
+      "value": "6"
+    }
+  },
+  "mapping": {
+    "0": "3",
+    "1": "4",
+    "2": "5",
+    "3": "6",
+    "4": "7",
+    "5": "8"
+  }
+}
