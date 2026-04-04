@@ -27,6 +27,17 @@ Si vous souhaitez fabriquer ce clavier vous-même, tous les fichiers nécessaire
 - Un poste à souder et de l'étain
 - Une imprimante 3D (pour le boîtier extérieur et les capuchons des touches)
 
+**Câblage des touches :**
+ 
+| Touche | Broche Pico |
+|--------|-------------|
+| Touche 1 | GP3 |
+| Touche 2 | GP4 |
+| Touche 3 | GP5 |
+| Touche 4 | GP6 |
+| Touche 5 | GP7 |
+| Touche 6 | GP8 |
+
 **Installation du code :**
 Une fois le montage physique terminé, il faut installer le système sur la carte. Voici la marche à suivre :
 
@@ -53,27 +64,26 @@ Chaque touche peut être programmée pour exécuter 3 types d'actions :
 
 Il y a deux méthodes pour personnaliser votre clavier, selon votre système d'exploitation et vos préférences.
 
-#### Méthode A : Avec l'application Web (Recommandé - Optimisé Windows)
+#### Méthode A : Avec l'application Web (Recommandé)
 Nous avons créé une interface visuelle pour configurer le clavier très facilement. *(Une fois configuré sous Windows, le clavier fonctionnera parfaitement sur Linux).*
 
-1. Ouvrez le fichier `index.html` avec un navigateur basé sur Chromium (**Google Chrome, Edge, Brave ou Opera**). *Safari et Firefox ne sont pas compatibles.*
-2. Branchez le clavier.
-3. Cliquez sur le bouton **Connecter & Éditer** et choisissez votre périphérique série.
-4. Appuyez physiquement sur la touche du macropad que vous voulez modifier : la page web va la cibler automatiquement.
-5. Choisissez l'action souhaitée et cliquez sur **Appliquer au clavier**. 
+1. Branchez le clavier à votre ordinateur.
+2. Ouvrez le fichier `index.html`  present sur le peripherique `CIRCUITPY` avec un navigateur basé sur Chromium (**Google Chrome, Edge, Brave ou Opera**). *Safari et Firefox ne sont pas compatibles
+3. Cliquez sur le bouton **Ouvrir config.json** en haut à droite et sélectionnez le fichier `config.json` situé à la racine de votre clavier (le lecteur nommé `CIRCUITPY`).
+4. Cliquez visuellement sur la touche que vous voulez modifier directement sur l'interface de la page web.
+5. Choisissez l'action souhaitée (Raccourci, Texte ou Lancement d'application/URL) et configurez-la.
+6. Cliquez sur **SAUVEGARDER SUR LE CLAVIER**. 
+7. **⚠️ IMPORTANT :** Une fois la sauvegarde terminée, vous **devez éjecter proprement le périphérique** (`CIRCUITPY`) depuis Windows/Linux avant de débrancher le clavier. Sans cette étape, le système d'exploitation risque de corrompre votre configuration !
 
-#### Méthode B : Directement via le fichier JSON (Pour Linux ou les bidouilleurs)
-Sur Linux, vous pouvez configurer vos touches en modifiant directement le fichier interne du clavier. Par défaut, le clavier est verrouillé pour protéger vos fichiers.
+#### Méthode B : Directement via le fichier JSON (Pour les bidouilleurs)
+Vous pouvez configurer vos touches en modifiant directement le fichier interne du clavier. Le clavier s'affiche en permanence sur votre PC comme une clé USB classique.
 
-Pour passer en "Mode Éditeur" :
-1. Débranchez le câble USB.
-2. Restez appuyé sur la **Touche 1** (la touche en haut à gauche quand le cable est brancher vers le haut, correspondant à l'index 0).
-3. **Tout en gardant cette touche appuyée**, branchez le câble USB sur l'ordinateur, puis relâchez-la (cette manipe permet d avoir les droit d ecriture sur la carte RP2040zero).
-4. Le clavier s'affiche sur votre PC comme une clé USB classique.
-5. Ouvrez le fichier `config.json` avec votre éditeur de texte.
-6. Modifiez vos macros dans la partie `"keys"` (des textes d'aide sont inclus dans le fichier pour vous guider).
-7. Sauvegardez le fichier (`CTRL + S`).
-8. Débranchez et rebranchez le clavier normalement pour repasser en mode "Utilisation".
+1. Branchez le câble USB sur l'ordinateur.
+2. Ouvrez le lecteur `CIRCUITPY` (qui s'affiche comme une clé USB) et ouvrez le fichier `config.json` avec votre éditeur de texte ou de code préféré.
+3. Modifiez vos macros dans la partie `"keys"` (des textes d'aide sont inclus dans le fichier pour vous guider).
+4. Sauvegardez le fichier (`CTRL + S`).
+5. **Éjectez proprement le lecteur** depuis votre système d'exploitation.
+6. Le clavier lit sa configuration en continu : il détectera la mise à jour de la sauvegarde et rechargera automatiquement vos nouvelles touches sans même avoir besoin de le débrancher !
 
 ---
 
