@@ -68,9 +68,9 @@ Il y a deux méthodes pour personnaliser votre clavier, selon votre système d'e
 Nous avons créé une interface visuelle pour configurer le clavier très facilement. *(Une fois configuré sous Windows, le clavier fonctionnera parfaitement sur Linux).*
 
 1. Branchez le clavier à votre ordinateur.
-2. Ouvrez le fichier `index.html`  present sur le peripherique `CIRCUITPY` avec un navigateur basé sur Chromium (**Google Chrome, Edge, Brave ou Opera**). *Safari et Firefox ne sont pas compatibles
+2. Ouvrez le fichier `index.html`  présent sur le péripherique `CIRCUITPY` avec un navigateur basé sur Chromium (**Google Chrome, Edge, Brave ou Opera**). *Safari et Firefox ne sont pas compatibles
 3. Cliquez sur le bouton **Ouvrir config.json** en haut à droite et sélectionnez le fichier `config.json` situé à la racine de votre clavier (le lecteur nommé `CIRCUITPY`).
-4. Cliquez visuellement sur la touche que vous voulez modifier directement sur l'interface de la page web.
+4. Cliquez sur la touche que vous voulez modifier directement sur l'interface de la page web.
 5. Choisissez l'action souhaitée (Raccourci, Texte ou Lancement d'application/URL) et configurez-la.
 6. Cliquez sur **SAUVEGARDER SUR LE CLAVIER**. 
 7. **⚠️ IMPORTANT :** Une fois la sauvegarde terminée, vous **devez éjecter proprement le périphérique** (`CIRCUITPY`) depuis Windows/Linux avant de débrancher le clavier. Sans cette étape, le système d'exploitation risque de corrompre votre configuration !
