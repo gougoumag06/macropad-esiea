@@ -18,4 +18,4 @@ Il s'agit de l'application Web visuelle qui vous permettra de configurer facilem
 * Copiez tout ce contenu directement à la racine du lecteur `CIRCUITPY`.
 
 ###Une fois tout installé, vous devriez avoir ça :
-[Aperçu des fichiers apres avoir tout installé](/assets/images/capture.png)
+![Aperçu des fichiers apres avoir tout installé](/assets/images/capture.png)
