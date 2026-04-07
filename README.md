@@ -69,7 +69,8 @@ Nous avons créé une interface visuelle pour configurer le clavier très facile
 
 1. Branchez le clavier à votre ordinateur.
 2. Ouvrez le fichier `index.html`  présent sur le péripherique `CIRCUITPY` avec un navigateur basé sur Chromium (**Google Chrome, Edge, Brave ou Opera**). *Safari et Firefox ne sont pas compatibles
-3. Cliquez sur le bouton **Ouvrir config.json** en haut à droite et sélectionnez le fichier `config.json` situé à la racine de votre clavier (le lecteur nommé `CIRCUITPY`).
+3. Cliquez sur le bouton **Ouvrir config.json** en haut à droite et sélectionnez le fichier `config.json` situé à la racine de votre clavier (le lecteur nommé `CIRCUITPY`). Si rien ne se passe au momment de cliquez, c’est sûrement que l’API File System Access est désactivée sur votre navigateur. Par exemple, sur Brave, pour l’activer il faut se rendre sur `brave://flags` et rechercher `file-system-access-api`. 
+
 4. Cliquez sur la touche que vous voulez modifier sur l'interface de la page web.
 5. Choisissez l'action souhaitée (Raccourci, Texte ou Lancement d'application/URL) et configurez-la.
 6. Cliquez sur **SAUVEGARDER SUR LE CLAVIER**. 
