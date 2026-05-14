@@ -222,7 +222,25 @@ def execute_action(action):
     val = action["value"]        
 
     if action_type == "text":
-        send_text(val)  
+
+        if len(val) == 1:
+            mapping = AZ_PHYSICAL if config.get("layout", "AZERTY") == "AZERTY" else QW_PHYSICAL
+            if val in mapping:
+                code, use_shift = mapping[val]  
+                if use_shift:
+                    kbd.press(Keycode.SHIFT) 
+                kbd.press(code)              
+            else:
+                if 'A' <= val <= 'Z':     
+                    kbd.press(Keycode.SHIFT) 
+                try:
+                    if 'a' <= val.lower() <= 'z':  
+                        kbd.press(getattr(Keycode, val.upper()))
+                except AttributeError:
+                    pass
+        else:
+            # Si c'est un mot ou une phrase entière
+            send_text(val)  
 
     # raccourci clavier
     elif action_type == "shortcut":
@@ -276,7 +294,40 @@ def execute_action(action):
                 kbd.press(Keycode.ENTER)
                 kbd.release_all()
 
+def release_action(action):
+    action_type = action["type"]   
+    val = action["value"]        
 
+    if action_type == "text" and len(val) == 1:
+        mapping = AZ_PHYSICAL if config.get("layout", "AZERTY") == "AZERTY" else QW_PHYSICAL
+        if val in mapping:
+            code, use_shift = mapping[val]  
+            kbd.release(code)
+            if use_shift:
+                kbd.release(Keycode.SHIFT)
+        else:
+            try:
+                if 'a' <= val.lower() <= 'z':  
+                    kbd.release(getattr(Keycode, val.upper()))
+            except AttributeError:
+                pass
+
+    elif action_type == "shortcut":
+        keys = [] 
+        for k in val.split('+'):
+            k = k.strip().upper()  
+            if config.get("layout") == "AZERTY" and len(k) == 1:
+                if k == 'M':
+                    keys.append(Keycode.SEMICOLON)
+                    continue  
+                k = AZERTY_TO_QWERTY.get(k, k)  
+            if k in KEYMAP:
+                keys.append(KEYMAP[k])  
+        if keys:
+            try:
+                kbd.release(*keys)
+            except Exception:
+                pass
 
 start_time = time.monotonic()  
 
@@ -294,7 +345,6 @@ while True:
         except Exception:
             pass  
 
-  
     for pin, btn in buttons.items(): 
         state = not btn.value 
         if state != last_state[pin]:  
@@ -302,16 +352,17 @@ while True:
                 last_debounce_time[pin] = now      
                 last_state[pin] = state            
 
+                # On récupère l'action assignée à ce bouton
+                action = config.get("keys", {}).get(str(pin))
+
                 if state:
                     # Ignore les appuis pendant les 3 premières secondes du démarrage
                     if now - start_time < 3.0:
                         continue 
 
-                    action = config.get("keys", {}).get(str(pin))
-
                     if action and action.get("value"):
                         execute_action(action) 
 
                 else:
-                    kbd.release_all() 
-
+                    if action and action.get("value"):
+                        release_action(action)
